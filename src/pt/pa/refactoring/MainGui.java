@@ -28,18 +28,19 @@ public class MainGui extends Application {
     public void start(Stage stage) throws Exception {
 
         Reviews reviews = new Reviews();
-        ListView listViewReviews = new ListView<>();
+        ListView<Review> listViewReviews = new ListView<>();
 
         BorderPane borderPane = new BorderPane();
 
         Scene scene = new Scene(borderPane,700,600);
-
-        // Product grid pane
-        GridPane productDescriptionGridPane = new GridPane();
-
+        
+        //Product image view
         FileInputStream inputStream = new FileInputStream("resources/portatil.jpg");
         Image image = new Image(inputStream);
         ImageView imageView = new ImageView(image);
+        
+        // Product grid pane
+        GridPane productDescriptionGridPane = new GridPane();
 
         Label labelProductName = new Label("Product: ");
         labelProductName.setStyle("-fx-font-weight: bold");
