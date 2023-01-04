@@ -141,10 +141,8 @@ public class MainGui extends Application {
 
                     reviews.add(new Review(name, text, rating));
                     listViewReviews.getItems().clear();
+                    listViewReviews.getItems().addAll(reviews);
 
-                    for (Review r : reviews) {
-                        listViewReviews.getItems().add(r);
-                    }
                     textFieldName.clear();
                     textFieldText.clear();
                     textFieldRating.clear();
