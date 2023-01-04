@@ -26,7 +26,6 @@ public class MainGui extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-
         Reviews reviews = new Reviews();
         ListView<Review> listViewReviews = new ListView<>();
 
@@ -102,10 +101,8 @@ public class MainGui extends Application {
         gridPaneAddReview.add(buttonAddReview, 1, 4);
 
         HBox hBoxProduct = new HBox(5);
-        hBoxProduct.getChildren().add(imageView);
-        hBoxProduct.getChildren().add(productDescriptionGridPane);
-        hBoxProduct.getChildren().add(gridPaneAddReview);
-
+        hBoxProduct.getChildren().addAll(imageView, productDescriptionGridPane, gridPaneAddReview);
+        
         borderPane.setTop(hBoxProduct);
 
         // Reviews list
