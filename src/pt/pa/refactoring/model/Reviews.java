@@ -6,8 +6,18 @@ import java.util.ArrayList;
  * @author amfs
  */
 public class Reviews extends ArrayList<Review> {
+
+    private int total;
+    private double avgRating;
+
     public int getTotal() {
-        return size();
+        total = 0;
+
+        for (Review r : this) {
+            total += 1;
+        }
+
+        return total;
     }
 
     public double getAvgRating() {
@@ -15,6 +25,8 @@ public class Reviews extends ArrayList<Review> {
         for (Review r : this) {
             sum += r.getRating();
         }
-        return sum / getTotal();
+        avgRating = (sum / getTotal());
+        return avgRating;
     }
 }
+
